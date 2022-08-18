@@ -38,9 +38,9 @@ const exibirDetalhesEvento = async () => {
 exibirDetalhesEvento();
 
 // selecionando formulario
-const formEditarEvento = document.querySelector('#cadastro-evento');
+const formEditarEvento = document.querySelector('#editar-evento');
 //capturando evento de envio do formulario
-formEditarEvento.addEventListener('submit', async (event) => {  //quando executar o submit, faz essa função
+formEditarEvento.addEventListener('submit', async (event) => {  
 
   event.preventDefault(); //evitar que a pagina seja recarregada
 
@@ -51,7 +51,6 @@ const inputData = document.querySelector("#data");
 const inputLotacao = document.querySelector("#lotacao");
 const inputBanner = document.querySelector("#banner");
 
-//alert(inputNome.value);
 
 const fullDateTime = new Date(inputData.value);
 
@@ -71,9 +70,9 @@ console.log(eventoAtualizadoObj);
     const eventoAtualizadoJSON = JSON.stringify(eventoAtualizadoObj); 
 
 
-//conexão com API para cadastrar novo evento
-// salvando resposta na const
-    const resposta = await fetch(SOUND_URL + "/" + findID(), { //fetch serve para fazer conexão com API
+//conexão com API para editar evento
+
+    const resposta = await fetch('https://xp41-soundgarden-api.herokuapp.com/events/' + findID(), { 
         method: "PUT",
         mode: "cors",
         headers: {
@@ -83,8 +82,8 @@ console.log(eventoAtualizadoObj);
     }).then((response) => {
         return response.json();
     }).then((responseOBJ) => {
-        // console.log(responseOBJ);
-        window.location.replace = ("./admin.html?acao=edit");
+        console.log(responseOBJ);
+        window.location.href = ("./admin.html?acao=edit");
 
     });
 
