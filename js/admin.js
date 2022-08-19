@@ -17,6 +17,7 @@ const listarEventos = async () => {
     console.log(eventos);
 
     const tbody = document.querySelector('.lista-eventos tbody');
+    
 
     let htmlEventos = "";
 

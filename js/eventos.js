@@ -13,7 +13,6 @@ const listarEventos = async () => {
     });
 
     console.log(eventos)
-  //----------------------------------------------------------
 
     const eventList = document.querySelector('#all-events')
 
@@ -24,6 +23,7 @@ const listarEventos = async () => {
             <article class="evento card p-5 m-3">
               <h2>${evento.name}</h2>
               <h4>${evento.attractions.join(', ')}</h4>
+              <a href="#" class="btn btn-primary">reservar ingresso</a>
             </article>
       `; 
   });
