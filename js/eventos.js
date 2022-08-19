@@ -8,6 +8,10 @@ const listarEventos = async () => {
         headers: {
             "Content-Type": "application/json"
         }
+
+
+
+
     }).then((resposta) => {
         return resposta.json();
     });
@@ -26,7 +30,7 @@ const listarEventos = async () => {
               <a href="#" class="btn btn-primary">reservar ingresso</a>
             </article>
       `; 
-  });
+  })
   eventList.innerHTML = htmlEventos;
 }
 
