@@ -2,8 +2,7 @@ const SOUND_URL = 'https://xp41-soundgarden-api.herokuapp.com/events'; //END POI
 
 const formCadastroEvento = document.querySelector('#cadastro-evento');
 
-formCadastroEvento.addEventListener('submit', async (event) => {  //quando executar o submit, faz essa função
-
+formCadastroEvento.addEventListener('submit', async (event) => { 
 event.preventDefault(); //evitar que a pagina seja recarregada
 
 const inputNome = document.querySelector("#nome");
@@ -13,7 +12,6 @@ const inputData = document.querySelector("#data");
 const inputLotacao = document.querySelector("#lotacao");
 const inputBanner = document.querySelector("#banner");
 
-//alert(inputNome.value);
 
 const fullDateTime = new Date(inputData.value);
 
@@ -34,8 +32,7 @@ console.log(novoEventoObj);
 
 
 //conexão com API para cadastrar novo evento
-// salvando resposta na const
-    const resposta = await fetch(SOUND_URL,{ //fetch serve para fazer conexão com API
+    const resposta = await fetch(`https://xp41-soundgarden-api.herokuapp.com/events`,{ 
         method: "POST",
         mode: "cors",
         headers: {
@@ -46,6 +43,7 @@ console.log(novoEventoObj);
         return response.json();
     }).then((responseOBJ) => {
         console.log(responseOBJ);
+        window.location.href = ("./admin.html");
     });
-
+    
 });

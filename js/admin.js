@@ -37,20 +37,7 @@ const listarEventos = async () => {
     });
 
     tbody.innerHTML = htmlEventos;
-
-
 }
 
 listarEventos();
 
-// quando a janela termina de carregar
-// window.onload = () => {
-//     const url = new URL(window.location.href);
-//     const acao = url.searchParams.get('acao');
-
-//     console.log(acao);
-
-//     if (acao != null && acao == 'edit') {
-//         alert('Evento atualizado com sucesso!');
-//     }
-// }
